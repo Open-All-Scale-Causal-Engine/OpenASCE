@@ -1,0 +1,10 @@
+econml>=0.14
+keras>=2.14
+numpy>=1.24
+pandas>=2.1
+pybind11>=2.11.1
+pyhocon>=0.3.60
+scikit-learn>=1.2
+scipy>=1.11
+tensorflow>=2.14
+torch>=2.0.1,!=2.1.*
