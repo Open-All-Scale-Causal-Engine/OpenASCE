@@ -20,7 +20,7 @@ from recommonmark.parser import CommonMarkParser
 ROOT_PATH = os.path.join(os.path.abspath(os.path.dirname(__file__)), "..")
 
 sys.path.insert(0, ROOT_PATH)
-sys.path.insert(0, ROOT_PATH + "../openasce")
+sys.path.insert(1, os.path.join(ROOT_PATH, "openasce"))
 os.environ["BUILD_SPHINX_DOCUMENT"] = "1"
 print(sys.path)
 

@@ -46,8 +46,8 @@ function pkg_build() {
 function pkg_install() {
     pushd "${PROJECT_DIR}"
 
-    tar_src=`find dist -type f -name "*.tar.gz"`
-    pip install --upgrade --no-deps --force-reinstall ${tar_src}
+    whl_src=`find dist -type f -name "*manylinux1_x86_64.whl"`
+    pip install --upgrade --no-deps --force-reinstall ${whl_src}
 
     popd
 }
