@@ -8,12 +8,12 @@ OpenASCE (Open All-Scale Casual Engine) is a comprehensive, easy-to-use, and eff
 
 The first version already supports the following features:
 
-1. [Two causal discovery algorithms](docs/core/en/causal_discovery.md): one search-based method and one continuous optimization-based method.
+1. [Two causal discovery algorithms](docs/core/en/discovery/causal_discovery.md): one search-based method and one continuous optimization-based method.
 2. 15+ Casual effect estimation methods and causal debiasing methods
-   - [5 classical causal effect estimation methods](docs/core/en/classical_methods.md). As [EconML](https://github.com/py-why/EconML) already has nice implementations of these methods, we directly integrate them into our package.
-   - [2 SOTA gradient boosting causal tree methods](docs/core/en/causal_trees.rst): GBCT and DiDTree. These algorithms leverage historical outcomes to address potential confounding bias and provide more reliable and unbiased estimates of treatment effects. We implemented time-consuming operators in C++ to speed up the computation.
-   - [9 causal representation learning methods](docs/core/en/debias.md). These methods are based on neural networks and can be used for causal effect estimation or debiasing in recommender systems.
-3. [Causal attribution method with Bayesian rule](docs/core/en/attribution.md). Given an outcome, the attribution method can provide a rule set that contains the most possible conditions that lead to the given outcome.
+   - [5 classical causal effect estimation methods](docs/core/en/inference/classical_methods.md). As [EconML](https://github.com/py-why/EconML) already has nice implementations of these methods, we directly integrate them into our package.
+   - [2 SOTA gradient boosting causal tree methods](docs/core/en/inference/causal_trees.rst): GBCT and DiDTree. These algorithms leverage historical outcomes to address potential confounding bias and provide more reliable and unbiased estimates of treatment effects. We implemented time-consuming operators in C++ to speed up the computation.
+   - [9 causal representation learning methods](docs/core/en/extension/debias.md). These methods are based on neural networks and can be used for causal effect estimation or debiasing in recommender systems.
+3. [Causal attribution method with Bayesian rule](docs/core/en/attribution/attribution.md). Given an outcome, the attribution method can provide a rule set that contains the most possible conditions that lead to the given outcome.
 
 In future versions, we will provide the following features:
 
