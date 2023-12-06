@@ -19,6 +19,7 @@ from tensorflow.python.keras.layers import Concatenate
 from openasce.extension.debias.common.utils import DNNModel, FMLayer
 from openasce.extension.debias_model import CausalDebiasModel
 
+
 class DMBRDebiasModel(CausalDebiasModel):
     """Building a DMBR model.
 

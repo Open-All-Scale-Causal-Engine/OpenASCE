@@ -216,7 +216,7 @@ if list(filter(lambda x: "macosx" in x.strip().lower(), sys.argv)):
 setup(
     name="openasce",
     version=version,
-    description="Open All-Scale CausalEngine",
+    description="Open All-Scale Causal Engine",
     long_description="OpenASCE (Open All-Scale Casual Engine) is a Python package for end-to-end large-scale causal learning. It provides causal discovery, causal effect estimation and attribution algorthms all in one package.",
     author="Ant Group",
     license="Apache",

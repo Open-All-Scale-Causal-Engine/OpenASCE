@@ -25,7 +25,7 @@ Compared to other open-source causal inference libraries, OpenASCE has the follo
 1. **Large-Scale and High Performance**: OpenASCE is optimized for large-scale causal learning tasks. The distributed version* of causal tree methods can handle datasets with hundreds of millions of samples.
 2. **Extensive algorithms**: OpenASCE provides 20+ industrial-grade algorithms, including 10+ causal representation learning algorithms and 6+ innovative algorithms.
 3. **Full-cycle**: OpenASCE provides a full-cycle causal learning pipeline, including causal discovery, causal effect estimation, and attribution.
-4. **Easy to use**: OpenASCE is designed with a simple interface that allows users to easily run their experiments without any programming knowledge. It also provides details documentation with usage examples.
+4. **Easy to use**: OpenASCE is designed with a simple interface that allows users to easily run their experiments. It also provides detailed documentations with usage examples.
 
 \* The distributed version will be released later.
 
@@ -60,7 +60,7 @@ After the installation, you can use all the algorithms except causal tree algori
 #### Causal Discovery
 
 ```python
-from openasce.discovery.CausalSearchDiscovery
+from openasce.discovery import CausalSearchDiscovery
 
 cs = CausalSearchDiscovery()
 cs.fit(X, delimiter=",", dtype=int) # X -> data

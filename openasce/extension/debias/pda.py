@@ -26,7 +26,7 @@ class PDADebiasModel(CausalDebiasModel):
 
     Link: https://arxiv.org/pdf/2105.06067.pdf.
 
-    Author: Yang Zhang1, Fuli Feng2, Xiangnan He, Tianxin Wei, Chonggang Song, Guohui Ling and Yongdong Zhang.
+    Author: Yang Zhang, Fuli Feng, Xiangnan He, Tianxin Wei, Chonggang Song, Guohui Ling and Yongdong Zhang.
 
     """
 
