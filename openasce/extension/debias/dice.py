@@ -19,6 +19,7 @@ from tensorflow.python.keras.layers import Dense
 from openasce.extension.debias.common.utils import DNNModel
 from openasce.extension.debias_model import CausalDebiasModel
 
+
 class DICEDebiasModel(CausalDebiasModel):
     """Building a DICE model.
 
