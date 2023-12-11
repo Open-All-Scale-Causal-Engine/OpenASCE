@@ -119,7 +119,11 @@ result = attr.get_result()
 print(result)
 ```
 
-The complete examples can be found in the [examples](examples/) folder. The detailed documents can be found in the [docs](docs/) folder.
+The complete examples can be found in the [examples](examples/) folder.
+
+## Documentation
+
+Documentation is available at: <https://openasce.readthedocs.io/en/latest/index.html>
 
 ## How to Contribute
 
