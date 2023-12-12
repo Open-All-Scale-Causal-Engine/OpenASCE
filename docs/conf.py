@@ -20,10 +20,9 @@ from recommonmark.parser import CommonMarkParser
 ROOT_PATH = os.path.join(os.path.abspath(os.path.dirname(__file__)), "..")
 
 sys.path.insert(0, ROOT_PATH)
-sys.path.insert(1, os.path.join(ROOT_PATH, "openasce"))
+sys.path.insert(0, os.path.join(ROOT_PATH, "openasce"))
 os.environ["BUILD_SPHINX_DOCUMENT"] = "1"
 print(sys.path)
-
 autoclass_content = "both"
 import sphinx_rtd_theme
 from recommonmark.transform import AutoStructify
@@ -41,6 +40,8 @@ with open(os.path.join(ROOT_PATH, "version.txt"), "r") as rf:
 
 # The full version, including alpha/beta/rc tags
 release = version
+
+autodoc_mock_imports = ["openasce.inference.tree.gbct_utils"]
 
 # -- General configuration ---------------------------------------------------
 
@@ -216,8 +217,12 @@ todo_include_todos = True
 
 # This is the expected signature of the handler for this event, cf doc
 def autodoc_skip_member_handler(app, what, name, obj, skip, options):
-    # Basic approach; you might want a regex instead
-    return name.startswith("test_") or name.startswith("Test") or name.endswith("_test")
+    return (
+        name.startswith("test_")
+        or name.startswith("Test")
+        or name.endswith("_test")
+        or (what == "class" and name in ["__dict__", "__weakref__"])
+    )
 
 
 # -- Extension configuration -------------------------------------------------
