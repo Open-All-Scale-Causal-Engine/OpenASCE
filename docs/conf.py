@@ -221,7 +221,9 @@ def autodoc_skip_member_handler(app, what, name, obj, skip, options):
         name.startswith("test_")
         or name.startswith("Test")
         or name.endswith("_test")
-        or (what == "class" and name in ["__dict__", "__weakref__"])
+        or (
+            what == "class" and name.startswith("_") and not name.startswith("__init__")
+        )
     )
 
 

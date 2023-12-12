@@ -114,6 +114,16 @@ class DNNLayer(tf.keras.layers.Layer):
         super(DNNLayer, self).build(input_shape)
 
     def call(self, inputs, training=None, **kwargs):
+        """Calls the layer on new inputs.
+
+        Args:
+            inputs: 2d tensor (batch_size, dim_1), deep features.
+
+        Returns:
+            2d tensor (batch_size, out_dim).
+
+        """
+
         deep_output = inputs
 
         for i in range(len(self.hidden_units)):
