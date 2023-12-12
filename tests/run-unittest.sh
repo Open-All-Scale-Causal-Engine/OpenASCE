@@ -58,11 +58,6 @@ TEST_DIR=$(cd "$(dirname $0)" && pwd)
 PROJECT_DIR="${TEST_DIR}"/..
 CPP_DIR="$PROJECT_DIR"/cpp
 
-pushd "$PROJECT_DIR" &> /dev/null
-wget http://arks-model.oss-cn-hangzhou-zmf.aliyuncs.com/067303/alps/interp/model/kept_external_libs.tar.gz -O external_libs.tar.gz
-tar xvfz external_libs.tar.gz
-popd &> /dev/null
-
 exitcode=0
 prepare_gbct_utils
 if [ ${exitcode} -ne 0 ]; then

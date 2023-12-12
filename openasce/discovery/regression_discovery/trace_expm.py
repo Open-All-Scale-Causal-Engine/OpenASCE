@@ -21,7 +21,14 @@ import torch
 class TraceExpm(torch.autograd.Function):
     @staticmethod
     def forward(ctx, input):
-        # detach so we can cast to NumPy
+        """Forward
+
+        Arguments:
+            ctx: the context object used to stash information.
+            input: the input tensor
+        Returns:
+            tensor for output
+        """
         E = slin.expm(input.detach().numpy())
         f = np.trace(E)
         E = torch.from_numpy(E)
@@ -30,6 +37,14 @@ class TraceExpm(torch.autograd.Function):
 
     @staticmethod
     def backward(ctx, grad_output):
+        """Backward
+
+        Arguments:
+            ctx: the context object used to retrieve the information.
+            grad_output: tensor containing the gradient
+        Returns:
+            tensor
+        """
         (E,) = ctx.saved_tensors
         grad_input = grad_output * E.t()
         return grad_input
