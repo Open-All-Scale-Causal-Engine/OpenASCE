@@ -48,8 +48,13 @@ class CausalDebiasModel(Runtime):
             C: Other concerned columns of the samples, e.g. {'weight': Iterable[np.ndarray]}
             Z: The iterable object returning (a batch of X, a batch of Y, a batch of C) if having
             num_epochs: number of the train epoch
+
         Returns:
             None
+
+        Note:
+            The reason why there is an input argument 'Z' is to allow the more combinations of dataset formats.
+
         """
         if C is not None and not isinstance(C, dict):
             raise ValueError(f"C should be dict.")
