@@ -10,7 +10,7 @@
 #    distributed under the License is distributed on an "AS IS" BASIS,
 #    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 
-from typing import Dict, Iterable, Union, Tuple
+from typing import Dict, Iterable, Tuple, Union
 
 import numpy as np
 
@@ -60,6 +60,27 @@ class CausalDebiasModel(Runtime):
         self._C = C
         self._Z = Z
         self._train_loop(num_epochs=num_epochs, **kwargs)
+
+    def evaluate(
+        self,
+        *,
+        X: Iterable[np.ndarray] = None,
+        Y: Iterable[np.ndarray] = None,
+        C: Dict[str, Iterable[np.ndarray]] = None,
+        Z: Iterable[Tuple[np.ndarray, np.ndarray, Dict[str, np.ndarray]]] = None,
+        **kwargs,
+    ) -> None:
+        """Feed the sample data and evaluate the model on the samples.
+
+        Arguments:
+            X: Features of the samples.
+            Y: Outcomes of the samples.
+            C: Other concerned columns of the samples, e.g. {'weight': Iterable[np.ndarray]}
+            Z: The iterable object returning (a batch of X, a batch of Y, a batch of C) if having
+        Returns:
+            None
+        """
+        pass
 
     def predict(
         self,
@@ -136,6 +157,7 @@ class CausalDebiasModel(Runtime):
 
     def _predict_loop(self):
         """main loop for prediction"""
+
         f_result = {}
         for z in self._generator():
             result = self._call(
@@ -149,7 +171,7 @@ class CausalDebiasModel(Runtime):
         return f_result
 
     def _generator(self, **kwargs):
-        """main loop"""
+        """data providing"""
 
         def none_generator():
             while True:
